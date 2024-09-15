@@ -1,0 +1,5 @@
+# ninja log v6
+4	320	7472349037348965	CMakeFiles/TP1_5.dir/main.c.obj	86b4324fb141705b
+30	335	7472349037618257	CMakeFiles/TP1_5.dir/graphe.c.obj	8659e2cfb9d3dbe1
+16	339	7472349037478623	CMakeFiles/TP1_5.dir/sommet.c.obj	842b4f4bdad9736c
+339	518	7472349040709993	TP1_5.exe	65d4793a79582c3a
