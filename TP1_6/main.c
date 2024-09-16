@@ -253,24 +253,24 @@ void attribuerWelshPowell(int* nbFrequences, Station ** stations, const int ordr
     }
     *nbFrequences = freq;
 
+}
 
+void free_stations(Station** stations, const int ordre) {
+    for (int i = 0; i < ordre; i++) {
+        free(stations[i]);
+    }
 
-
-
+    free(stations);
 }
 /// ************* FIN CODE ETUDIANT *************
 
 #pragma endregion
 
-int main()
-{
-
+int main() {
     /// Chargement du réseau et affichage avant coloration
     int ordre;
     ///LES FICHIERS SE TROUVENT DANS LE REPERTOIRE cmake-build-debug
     Station ** stations = ouvrir_reseau("reseau3.txt", &ordre);
-    afficher_reseau(stations, ordre);
-
 
     /// Coloration algorithme "naïf" et affichar
     /// COMPLETÉ
@@ -279,6 +279,7 @@ int main()
     printf("Après naif : %d frequences utilisees\n", nbFrequences);
     afficher_reseau(stations, ordre);
 
+    printf("======================================================\n");
     resetFrequences(stations, ordre);
 
     /// Coloration algorithme "Welsh et Powell" et affichage
@@ -288,6 +289,7 @@ int main()
     printf("Après Welsh Powell : %d frequences utilisees\n", nbFrequences2);
     afficher_reseau(stations, ordre);
 
+    printf("======================================================\n");
     resetFrequences(stations, ordre);
 
     /// Coloration algorithme "Systématique" et affichage
@@ -297,6 +299,8 @@ int main()
     afficher_reseau(stations, ordre);
 
     // free stations
+
+    free_stations(stations, ordre);
 
     return 0;
 }
